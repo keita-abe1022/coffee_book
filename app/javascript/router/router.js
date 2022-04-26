@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 export default new VueRouter( {
   mode: 'history',
   routes: [
-  { path: '/coffees', name: 'CoffeeHome', component: CoffeeHome }
+  { path: '/', name: 'CoffeeHome', component: CoffeeHome }
   ]
 });
 

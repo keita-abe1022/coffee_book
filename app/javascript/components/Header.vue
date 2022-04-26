@@ -1,7 +1,15 @@
 <template>
-  <v-app-bar>
-      <v-toolbar-title>COFFEE BOOK</v-toolbar-title>
-    </v-app-bar>
+  <v-app-bar
+    app
+    shrink-on-scroll
+  >
+    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-toolbar-title>COFFEE BOOK</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn icon>
+      <v-icon>mdi-dots-vertical</v-icon>
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <script>

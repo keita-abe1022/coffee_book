@@ -3,10 +3,6 @@
     <Header/>
     <router-view/>
   </v-app>
-  <!-- <div id="app">
-    <Header/>
-    <router-view/>
-  </div> -->
 </template>
 
 <script>
