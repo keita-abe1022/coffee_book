@@ -7,6 +7,7 @@
     <v-toolbar-title>COFFEE BOOK</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon>
+      <!-- Material iconを使用する。mdiをつけると使用可。 -->
       <v-icon>mdi-dots-vertical</v-icon>
     </v-btn>
   </v-app-bar>

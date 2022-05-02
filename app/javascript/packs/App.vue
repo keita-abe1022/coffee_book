@@ -1,7 +1,10 @@
 <template>
+<!-- 一番外に必須。 -->
   <v-app>
     <Header/>
-    <router-view/>
+    <v-main>
+      <router-view/>
+    </v-main>
   </v-app>
 </template>
 

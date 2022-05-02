@@ -1,17 +1,17 @@
 <template>
-  <v-main>
     <v-container>
       <v-row>
         <v-col
-          v-for="n in 24"
-          :key="n"
+          v-for="coffee in coffees"
+          :key="coffee.id"
           cols="4"
         >
-          <v-card height="200"></v-card>
+          <v-card height="200">
+            <v-card-title>{{ coffee.product_name }}</v-card-title>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
-  </v-main>
 </template>
 
 <script>
