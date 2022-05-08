@@ -1,13 +1,39 @@
 <template>
     <v-container>
-      <v-row>
+      <v-row >
         <v-col
           v-for="coffee in coffees"
           :key="coffee.id"
           cols="4"
         >
-          <v-card height="200">
+          <v-card height="200" @click="setCoffeeInfo(coffee.id)">
             <v-card-title>{{ coffee.product_name }}</v-card-title>
+            <v-card-text>{{ coffee.shop }}</v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row
+        v-show="coffeeInfoBool"
+      >
+        <v-col>
+          <v-card
+            elevation="2"
+            outlined
+            height="600"
+            color="#d7ccc8"
+          >
+            <v-card-title>{{ coffeeInfo.product_name }}
+            </v-card-title>
+            <v-card-text>生産地：{{coffeeInfo.producing_area }}
+            </v-card-text>
+            <v-card-text>価格：{{ coffeeInfo.price }}</v-card-text>
+            <v-card-text>量：{{ coffeeInfo.gram }}</v-card-text>
+            <v-card-text>購入方法：{{ coffeeInfo.purchashing_system }}</v-card-text>
+            <v-card-text>焙煎度：{{ coffeeInfo.degree_of_roasting }}</v-card-text>
+            <v-card-text>挽き方：{{ coffeeInfo.grind }}</v-card-text>
+            <v-card-text>淹れ方：{{ coffeeInfo.brew }}</v-card-text>
+            <v-card-text>購入店舗：{{ coffeeInfo.shop }}</v-card-text>
+            <v-card-text>コメント：{{ coffeeInfo.comment }}</v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -40,7 +66,7 @@ export default {
       });
     },
     setCoffeeInfo(id){
-      axios.get(`api/coffees/$(id).json`).then(res => {
+      axios.get(`api/coffees/${id}.json`).then(res => {
         this.coffeeInfo = res.data;
         this.coffeeInfoBool = true;
       });

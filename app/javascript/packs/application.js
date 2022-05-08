@@ -5,7 +5,7 @@ require("channels")
 
 import Vue from 'vue'
 import App from './App.vue'
-import Router from '../router/router.js'
+import router from '../router/router.js'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
@@ -14,8 +14,8 @@ const vuetify = new Vuetify();
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    router: Router,
-    vuetify: vuetify,
+    router,
+    vuetify,
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)

@@ -16,7 +16,9 @@ class Api::CoffeesController < ApplicationController
     if @coffee.save
       head :no_content
     else
-      render json: @coffee.errors, status: :unprocessable_entity
+      render json: @coffee.errors, 
+      # バリデーションエラーを返す
+      status: :unprocessable_entity
     end
   end
 
