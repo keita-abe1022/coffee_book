@@ -57,40 +57,30 @@ export default {
   name: 'CoffeeHome',
   data: function() {
     return {
-      coffeeInfo: {},
-      coffeeInfoBool: false,
-      coffees: [],
     }
+  },
+  computed: {
+    coffees() {
+      return this.$store.state.coffees
+    },
+    coffeeInfo() {
+      return this.$store.state.coffeeInfo
+    },
+    coffeeInfoBool() {
+      return this.$store.state.coffeeInfoBool
+    },
   },
   mounted: function() {
-    this.fetchCoffees();
+    this.$store.commit('fetchCoffees')
   },
   methods: {
-    fetchCoffees() {
-      axios.get(`/api/coffees`).then((res) => {
-        for(let i = 0; i < res.data.coffees.length; i++){
-          this.coffees.push(res.data.coffees[i]);
-        }
-      }, (error) => {
-        console.log(error);
-      });
-    },
-    setCoffeeInfo(id){
-      axios.get(`api/coffees/${id}.json`).then(res => {
-        this.coffeeInfo = res.data;
-        this.coffeeInfoBool = true;
-      });
+    setCoffeeInfo(id) {
+      this.$store.commit('setCoffeeInfo', { id })
     },
     deleteCoffee(id) {
-      axios.delete(`/api/coffees/${id}`).then(res => {
-        this.coffees = [];
-        this.coffeeInfo = '';
-        this.coffeeInfoBool = false;
-        this.fetchCoffees();
-      }
-
-      )
-    }
+      this.$store.commit('deleteCoffee', { id })
+      this.$store.commit('fetchCoffees')
+    },
   }
 }
 </script>

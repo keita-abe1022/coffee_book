@@ -6,6 +6,7 @@ require("channels")
 import Vue from 'vue'
 import App from './App.vue'
 import router from '../router/router.js'
+import store from '../store/store.js'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
@@ -15,6 +16,7 @@ const vuetify = new Vuetify();
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     router,
+    store,
     vuetify,
     render: h => h(App)
   }).$mount()
