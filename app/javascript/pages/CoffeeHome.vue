@@ -34,6 +34,11 @@
             <v-card-text>淹れ方：{{ coffeeInfo.brew }}</v-card-text>
             <v-card-text>購入店舗：{{ coffeeInfo.shop }}</v-card-text>
             <v-card-text>コメント：{{ coffeeInfo.comment }}</v-card-text>
+            <v-btn
+            :to="{ path: `/edit/${coffeeInfo.id}` }"
+            >
+            編集
+            </v-btn>
           </v-card>
         </v-col>
       </v-row>

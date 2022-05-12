@@ -1,5 +1,5 @@
 class Api::CoffeesController < ApplicationController
-  protect_from_forgery :except => [:create]
+  protect_from_forgery :except => [:create, :update]
 
   def index
     @coffees = Coffee.all
@@ -19,6 +19,15 @@ class Api::CoffeesController < ApplicationController
       render json: @coffee.errors, 
       # バリデーションエラーを返す
       status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @coffee = Coffee.find(params[:id])
+    if @coffee.update_attributes(coffee_params)
+      render 'index', formats: :json, handlers: 'jbuilder'
+    else
+      render json: @coffee.errors, status: :unprocessable_entity
     end
   end
 
