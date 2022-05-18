@@ -9,20 +9,6 @@ brews = ["ペーパーフィルター", "フレンチプレス", "ネルドリ�
 shops = ["ドトール", "カルディ", "スターバックス"]
 comments = ["おいしい", "まずまず", "美味"]
 
-
-# Coffee.create!(
-#   product_name: "ブレンド",
-#   producing_area: "インドネシア",
-#   price: 650,
-#   gram: 250,
-#   purchashing_system: "豆", 
-#   degree_of_roasting: "深煎り",
-#   grind: "中挽き",
-#   brew: "ペーパードリップ",
-#   shop: "スターバックス",
-#   comment: "おいしい。"
-# )
-
 3.times do |i|
   Coffee.create!(
     product_name: product_names[i],
@@ -37,3 +23,10 @@ comments = ["おいしい", "まずまず", "美味"]
     comment: comments[i]
   )
 end
+
+User.create!(
+  user_name: 'Admin User',
+  email: 'example@example.com',
+  password: 'foobar',
+  password_confirmation: 'foobar'
+)
