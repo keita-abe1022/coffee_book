@@ -26,8 +26,8 @@
         >
         </v-text-field>
         </v-col>
-        <v-btn text @click="sigunUp">登録</v-btn>
-        <v-btn to="/signin" >ログイン</v-btn>
+        <v-btn text @click="signUp">登録</v-btn>
+        <v-btn text to="/signin" >ログイン</v-btn>
       </v-row>
     </v-container>
   </v-form>

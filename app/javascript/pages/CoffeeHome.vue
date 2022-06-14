@@ -6,9 +6,16 @@
           :key="coffee.id"
           cols="4"
         >
-          <v-card height="200" @click="setCoffeeInfo(coffee.id)">
+          <v-card 
+            height="150" 
+            elavetion="4"
+            color="brown lighten-5"
+            active-class="brown lighten-2"
+            @click="setCoffeeInfo(coffee.id)"
+          >
             <v-card-title>{{ coffee.product_name }}</v-card-title>
-            <v-card-text>{{ coffee.shop }}</v-card-text>
+            <v-divider></v-divider>
+            <v-card-text>購入店舗：{{ coffee.shop }}</v-card-text>
           </v-card>
         </v-col>
       </v-row>

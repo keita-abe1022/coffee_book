@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include JWTSessions::RailsAuthorization
-  rescue_from JWTSessions::Errprs::Unauthorized, with: :not_autorized
+  rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
 
   private
 
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(payload['user_id'])
   end
 
-  def not_autorized
+  def not_authorized
     render json: { error: 'Not Authorized' }, status: :unauthorized
   end
 end

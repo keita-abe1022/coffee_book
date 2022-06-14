@@ -34,7 +34,7 @@
           <v-text-field
             v-model="coffee.gram"
             label="グラム"
-            placeholder="(例)250g"
+            placeholder="(例)250"
           ></v-text-field>
         </v-col>
         <v-col
