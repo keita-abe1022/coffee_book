@@ -141,9 +141,11 @@ export default {
     },
     updateCoffee(id) {
       if (!this.coffee.product_name) return;
-      axios.put(`/api/coffees/${id}`, { coffee: this.coffee }).then((res) => {
+      axios.put(`/api/coffees/${id}`, { coffee: this.coffee })
+      .then(res => {
         this.$router.push({ path: '/' });
-      }, (error) => {
+      })
+      .catch(error => {
         console.log(error);
       });
     },

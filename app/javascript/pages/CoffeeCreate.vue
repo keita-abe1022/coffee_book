@@ -119,11 +119,15 @@ export default {
   methods: {
     createCoffee: function () {
       if (!this.coffee.product_name) return;
-      axios.post('/api/coffees', { coffee: this.coffee }).then((res) => {
-        this.$router.push({ path: '/' });
-      }, (error) => {
-        console.log(error);
-      });
+      axios.post(
+        '/api/coffees',
+        { coffee: this.coffee })
+        .then(res => {
+          this.$router.push({ path: '/' });
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 }

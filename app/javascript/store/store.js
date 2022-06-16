@@ -25,13 +25,15 @@ export default new Vuex.Store({
       });
     },
     setCoffeeInfo(state, { id }) {
-      axios.get(`/api/coffees/${id}.json`).then(res => {
+      axios.get(`/api/coffees/${id}.json`)
+      .then(res => {
         state.coffeeInfo = res.data;
         state.coffeeInfoBool = true;
       });
     },
     deleteCoffee(state, { id }) {
-      axios.delete(`/api/coffees/${id}`).then(res => {
+      axios.delete(`/api/coffees/${id}`)
+      .then(res => {
         state.coffeeInfo = '';
         state.coffeeInfoBool = false;
       })

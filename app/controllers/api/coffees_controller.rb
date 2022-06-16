@@ -27,7 +27,8 @@ class Api::CoffeesController < ApplicationController
     if @coffee.update_attributes(coffee_params)
       render 'index', formats: :json, handlers: 'jbuilder'
     else
-      render json: @coffee.errors, status: :unprocessable_entity
+      render json: @coffee.errors, 
+      status: :unprocessable_entity
     end
   end
 
